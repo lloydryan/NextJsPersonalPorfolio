@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "../styles/Home.css";
-
+import { FaBrain, FaCode, FaGithub, FaLinkedin, FaPaintBrush, FaTwitter } from "react-icons/fa";
+import profile from "../assets/images/profile.jpg";
 const Home = () => {
   const navigate = useNavigate();
   const staticText = "Hi, I'm "; // This part remains unchanged
@@ -51,35 +52,68 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container container mt-5 p-5">
-      <h1
-        className="home-h1"
-        data-aos="fade-right"
-        data-aos-duration="1000"
-        data-aos-delay="300"
-      >
-        {staticText}
-        {typedText}
-        <span className="cursor">{showCursor ? "|" : ""}</span>
-      </h1>
-      <div
-        className="content"
-        data-aos="fade-right"
-        data-aos-duration="1000"
-        data-aos-delay="700"
-      >
-        <h2 className="home-h2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-          temporibus.
-        </h2>
-        <p className="home-p" data-aos-delay="1000">
-          Fugit culpa omnis perferendis vitae voluptatem quibusdam asperiores
-          blanditiis a magni fuga ea velit nihil fugiat neque accusantium, aut
-          qui.
-        </p>
-        <button className="start-btn" onClick={handleClick}>
-          Let's Get Started <span className="arrow-icon">➜</span>
-        </button>
+<div className="home-container container mt-5">
+  
+      <div className="home-content">
+        <div className="hero-section">
+          <div className="hero-text">
+            <h1
+              className="home-h1"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="300"
+            >
+              {staticText}
+              {typedText}
+              <span className="cursor">{showCursor ? "|" : ""}</span>
+            </h1>
+            <h2 className="home-h2" data-aos="fade-right" data-aos-delay="500">
+              Full Stack Developer & UI/UX Designer
+            </h2>
+            <p className="home-p" data-aos="fade-right" data-aos-delay="700">
+              Passionate about creating beautiful, functional web applications
+              and user experiences. I specialize in modern web technologies
+              and love bringing creative ideas to life through code.
+            </p>
+            <div className="hero-actions" data-aos="fade-up" data-aos-delay="900">
+              <button className="start-btn primary-btn" onClick={handleClick}>
+                View My Work <span className="arrow-icon">➜</span>
+              </button>
+              <button className="start-btn secondary-btn" onClick={() => navigate("/connect")}>
+                Get In Touch
+              </button>
+            </div>
+            <div className="social-links" data-aos="fade-up" data-aos-delay="200">
+              <a href="#" className="social-link"><FaLinkedin /></a>
+              <a href="#" className="social-link"><FaGithub /></a>
+              <a href="#" className="social-link"><FaTwitter /></a>
+            </div>
+          </div>
+          <div className="hero-image" data-aos="fade-left" data-aos-delay="600">
+            <div className="profile-image-container">
+              <div className="profile-image">
+                {/* Replace with your actual profile image */}
+                <div className="profile-placeholder">
+                  <span><img src={profile} alt="Profile" /></span>
+                </div>
+              </div>
+              <div className="floating-elements">
+                <div className="floating-card card-1">
+                  <span><FaCode /></span>
+                  <small>Web Dev</small>
+                </div>
+                <div className="floating-card card-2">
+                  <span><FaPaintBrush /></span>
+                  <small>Design</small>
+                </div>
+                <div className="floating-card card-3">
+                  <span><FaBrain /></span>
+                  <small>Problem Solving</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
