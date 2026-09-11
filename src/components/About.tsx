@@ -15,25 +15,29 @@ const groupedTechStack = {
 
 const timelineData = [
   {
-    year: "2025",
-    title: "University Instructor",
-    description: "Became an instructor at the University of Mindanao, sharing knowledge and mentoring the next generation of developers."
+    year: "Present",
+    title: "College Instructor at the University of Mindanao",
+    description:
+      "Now serving as a College Instructor at the University of Mindanao, teaching practical computing concepts and mentoring the next generation of developers.",
   },
   {
     year: "August 2025",
     title: "Graduated",
-    description: "Successfully graduated from the University of Mindanao, completing my degree and solidifying my foundation in computer science."
+    description:
+      "Successfully graduated from the University of Mindanao, completing my degree and solidifying my foundation in computer science.",
   },
   {
     year: "2022-2024",
     title: "Freelance Programmer",
-    description: "Worked as a freelance programmer, building projects and gaining real-world experience in web development and software solutions."
+    description:
+      "Worked as a freelance programmer, building projects and gaining real-world experience in web development and software solutions.",
   },
   {
     year: "2021",
     title: "Started Coding Journey",
-    description: "Began my coding journey upon enrolling at the University of Mindanao, discovering my passion for programming and web development."
-  }
+    description:
+      "Began my coding journey upon enrolling at the University of Mindanao, discovering my passion for programming and web development.",
+  },
 ];
 
 const About = () => {
@@ -53,12 +57,12 @@ const About = () => {
     <div className="container text-center p-5">
       <br />
       <h1 className="text-3xl font-bold mt-5">About Me</h1>
-      <h1 className="text-center">Hi 👋, I'm Lloyd Ryan Largo</h1>
+      <h1 className="text-center">{"Hi, I'm Lloyd Ryan Largo"}</h1>
       <h3 className="text-center">
-        A passionate Web Developer from the Philippines
+        A College Instructor at the University of Mindanao and passionate Web
+        Developer from the Philippines
       </h3>
 
-      {/* Timeline Section */}
       <div className="timeline-section">
         <h3 className="timeline-title">My Journey</h3>
         <div className="timeline">
@@ -89,7 +93,6 @@ const About = () => {
           ([category, techNames], index) => {
             let delay;
 
-            // Set specific delays based on index
             switch (index) {
               case 0:
                 delay = 100;
@@ -110,7 +113,7 @@ const About = () => {
                 delay = 450;
                 break;
               default:
-                delay = index * 200; // Default delay for other cards
+                delay = index * 200;
             }
 
             return (

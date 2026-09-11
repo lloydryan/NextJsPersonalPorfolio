@@ -1,5 +1,11 @@
-import Achievements from "../../components/Achievements";
+import type { Metadata } from "next";
+import AchievementArchive from "../../components/portfolio/AchievementArchive";
 
-export default function Page() {
-  return <Achievements />;
+export const metadata: Metadata = {
+  title: "Certifications | Lloyd Ryan Largo",
+  description: "Information Technology Specialist certifications earned by Lloyd Ryan Largo.",
+};
+
+export default function AchievementsPage() {
+  return <AchievementArchive />;
 }
