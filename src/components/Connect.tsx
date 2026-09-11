@@ -1,5 +1,4 @@
 import { FaFacebook, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import "../styles/Connect.css"; // Import custom CSS for styling
 
 const ConnectWithMe = () => {
   return (

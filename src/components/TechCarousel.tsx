@@ -1,5 +1,6 @@
+"use client";
+
 import { motion } from "framer-motion";
-import "../styles/About.css";
 
 export interface Tech {
   name: string;

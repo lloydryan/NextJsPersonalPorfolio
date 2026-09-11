@@ -1,10 +1,10 @@
-import { useNavigate } from "react-router-dom";
+"use client";
+
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import "../styles/Home.css";
-import { FaBrain, FaCode, FaGithub, FaLinkedin, FaPaintBrush, FaTwitter } from "react-icons/fa";
-import profile from "../assets/images/profile.jpg";
+import { FaBrain, FaCode, FaFacebook, FaGithub, FaLinkedin, FaPaintBrush } from "react-icons/fa";
 const Home = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const staticText = "Hi, I'm "; // This part remains unchanged
   const dynamicText = "Lloyd."; // This part will be erased and retyped
   const [typedText, setTypedText] = useState("");
@@ -48,7 +48,7 @@ const Home = () => {
   }, []);
 
   const handleClick = () => {
-    navigate("/about");
+    router.push("/about");
   };
 
   return (
@@ -79,14 +79,14 @@ const Home = () => {
               <button className="start-btn primary-btn" onClick={handleClick}>
                 View My Work <span className="arrow-icon">➜</span>
               </button>
-              <button className="start-btn secondary-btn" onClick={() => navigate("/connect")}>
+              <button className="start-btn secondary-btn" onClick={() => router.push("/connect")}>
                 Get In Touch
               </button>
             </div>
-            <div className="social-links" data-aos="fade-up" data-aos-delay="200">
+            <div className="social-links" data-aos="fade-up" data-aos-delay="1100">
               <a href="#" className="social-link"><FaLinkedin /></a>
-              <a href="#" className="social-link"><FaGithub /></a>
-              <a href="#" className="social-link"><FaTwitter /></a>
+              <a href="https://github.com/lloydryan" className="social-link"><FaGithub /></a>
+              <a href="https://www.facebook.com/lloydryan.largo.7" className="social-link"><FaFacebook /></a>
             </div>
           </div>
           <div className="hero-image" data-aos="fade-left" data-aos-delay="600">
@@ -94,7 +94,7 @@ const Home = () => {
               <div className="profile-image">
                 {/* Replace with your actual profile image */}
                 <div className="profile-placeholder">
-                  <span><img src={profile} alt="Profile" /></span>
+                  <span><img src="/images/profile.jpg" alt="Profile" /></span>
                 </div>
               </div>
               <div className="floating-elements">

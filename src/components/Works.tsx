@@ -1,29 +1,67 @@
-import { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/Work.css"; // Custom styles for layout
+"use client";
 
-// Import images
-import project1 from "../assets/images/project1.png";
-import project2 from "../assets/images/project2.png";
-import project3 from "../assets/images/project3.png";
-import project4 from "../assets/images/project4.png";
-import project5 from "../assets/images/project5.png";
-import project6 from "../assets/images/project6.png";
+import { useEffect, useState } from "react";
+
 import TechCarousel, { techStack } from "./TechCarousel";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
+const works = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    image: "/images/project1.png",
+    description:
+      "This is an e-commerce platform with a seamless UI/UX experience.",
+    gallery: ["/images/project2.png", "/images/project4.png", "/images/project3.png"],
+  },
+  {
+    id: 2,
+    title: "Movie Searcher & Chat App",
+    image: "/images/project2.png",
+    description:
+      "A web movie searcher and a real-time chat application using WebSockets and Node.js.",
+    gallery: ["/images/project1.png", "/images/project3.png", "/images/project5.png"],
+  },
+  {
+    id: 3,
+    title: "Project 3",
+    image: "/images/project3.png",
+    description: "A CMS system for content management with rich text editing.",
+    gallery: ["/images/project1.png", "/images/project4.png", "/images/project6.png"],
+  },
+  {
+    id: 4,
+    title: "Project 4",
+    image: "/images/project4.png",
+    description: "A portfolio website built using React and Bootstrap.",
+    gallery: ["/images/project2.png", "/images/project3.png", "/images/project5.png"],
+  },
+  {
+    id: 5,
+    title: "Web Design for a Company",
+    image: "/images/project5.png",
+    description:
+      "A web design concept focused on minimalism for a corporate client.",
+    gallery: ["/images/project1.png", "/images/project3.png", "/images/project6.png"],
+  },
+  {
+    id: 6,
+    title: "SafeTrack",
+    image: "/images/project6.png",
+    description:
+      "A mobile application built using Flutter for real-time tracking.",
+    gallery: ["/images/project2.png", "/images/project4.png", "/images/project5.png"],
+  },
+];
 
 const Works = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); // Initialize AOS
-
-    // Update screen size on resize
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 768);
     };
 
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -31,56 +69,6 @@ const Works = () => {
   const [selectedWork, setSelectedWork] = useState<
     (typeof works)[number] | null
   >(null);
-
-  const works = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      image: project1,
-      description:
-        "This is an e-commerce platform with a seamless UI/UX experience.",
-      gallery: [project2, project4, project3],
-    },
-    {
-      id: 2,
-      title: "Movie Searcher & Chat App",
-      image: project2,
-      description:
-        "A web movie searcher and a real-time chat application using WebSockets and Node.js.",
-      gallery: [project1, project3, project5],
-    },
-    {
-      id: 3,
-      title: "Project 3",
-      image: project3,
-      description:
-        "A CMS system for content management with rich text editing.",
-      gallery: [project1, project4, project6],
-    },
-    {
-      id: 4,
-      title: "Project 4",
-      image: project4,
-      description: "A portfolio website built using React and Bootstrap.",
-      gallery: [project2, project3, project5],
-    },
-    {
-      id: 5,
-      title: "Web Design for a Company",
-      image: project5,
-      description:
-        "A web design concept focused on minimalism for a corporate client.",
-      gallery: [project1, project3, project6],
-    },
-    {
-      id: 6,
-      title: "SafeTrack",
-      image: project6,
-      description:
-        "A mobile application built using Flutter for real-time tracking.",
-      gallery: [project2, project4, project5],
-    },
-  ];
 
   return (
     <div className="container text-center py-5 mt-5">

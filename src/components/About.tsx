@@ -1,4 +1,6 @@
-import "../styles/About.css";
+"use client";
+
+import { useEffect, useState } from "react";
 import ConnectWithMe from "./Connect";
 import { techStack } from "./TechCarousel";
 
@@ -11,7 +13,42 @@ const groupedTechStack = {
   "Data Visualization": ["Chart.js"],
 };
 
+const timelineData = [
+  {
+    year: "2025",
+    title: "University Instructor",
+    description: "Became an instructor at the University of Mindanao, sharing knowledge and mentoring the next generation of developers."
+  },
+  {
+    year: "August 2025",
+    title: "Graduated",
+    description: "Successfully graduated from the University of Mindanao, completing my degree and solidifying my foundation in computer science."
+  },
+  {
+    year: "2022-2024",
+    title: "Freelance Programmer",
+    description: "Worked as a freelance programmer, building projects and gaining real-world experience in web development and software solutions."
+  },
+  {
+    year: "2021",
+    title: "Started Coding Journey",
+    description: "Began my coding journey upon enrolling at the University of Mindanao, discovering my passion for programming and web development."
+  }
+];
+
 const About = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="container text-center p-5">
       <br />
@@ -21,7 +58,32 @@ const About = () => {
         A passionate Web Developer from the Philippines
       </h3>
 
-      <h3 className="text-left mt-4">Languages and Tools:</h3>
+      {/* Timeline Section */}
+      <div className="timeline-section">
+        <h3 className="timeline-title">My Journey</h3>
+        <div className="timeline">
+          {timelineData.map((item, index) => (
+            <div
+              key={index}
+              className="timeline-item"
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay={index * 150}
+            >
+              <div className="timeline-marker">
+                <div className="timeline-dot"></div>
+              </div>
+              <div className="timeline-card">
+                <span className="timeline-year">{item.year}</span>
+                <h4>{item.title}</h4>
+                <p className="timeline-description">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h3 className="text-left mt-5">Languages and Tools:</h3>
       <div className="tech-grid">
         {Object.entries(groupedTechStack).map(
           ([category, techNames], index) => {
@@ -57,7 +119,7 @@ const About = () => {
                 className="tech-card"
                 data-aos="fade-right"
                 data-aos-duration="1000"
-                data-aos-delay={window.innerWidth > 768 ? delay : 0} // Apply only on larger screens
+                data-aos-delay={isSmallScreen ? 0 : delay}
               >
                 <h4 className="tech-category">{category}</h4>
                 <div className="tech-icons">

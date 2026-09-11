@@ -1,58 +1,49 @@
-import { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "../styles/Achievements.css"; // Import the CSS file
+"use client";
 
-import certificate1 from "../assets/images/cert/image (1).png";
-import certificate2 from "../assets/images/cert/image (2).png";
-import certificate3 from "../assets/images/cert/image (3).png";
-import certificate4 from "../assets/images/cert/image (4).png";
-import certificate5 from "../assets/images/cert/image (5).png";
+import { useEffect, useState } from "react";
 
 const achievementsData = [
   {
     title: "Cybersecurity",
     provider: "Information Technology Specialist",
     date: "December 18, 2024",
-    image: certificate1,
+    image: "/images/cert/image (1).png",
   },
   {
     title: "Network Security",
     provider: "Information Technology Specialist",
     date: "July 15, 2024",
-    image: certificate2,
+    image: "/images/cert/image (2).png",
   },
   {
     title: "Networking",
     provider: "Information Technology Specialist",
     date: "October 7, 2023",
-    image: certificate3,
+    image: "/images/cert/image (3).png",
   },
   {
     title: "HTML and CSS",
     provider: "Information Technology Specialist",
     date: "May 19, 2023",
-    image: certificate4,
+    image: "/images/cert/image (4).png",
   },
   {
     title: "Databases",
     provider: "Information Technology Specialist",
     date: "March 15, 2023",
-    image: certificate5,
+    image: "/images/cert/image (5).png",
   },
 ];
 
 const Achievements = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true }); // Initialize AOS
-
-    // Update screen size on resize
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 768);
     };
 
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
