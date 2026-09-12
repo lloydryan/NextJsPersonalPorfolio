@@ -2,6 +2,10 @@
 
 This is a Next.js portfolio app for Lloyd Ryan Largo, a College Instructor at the University of Mindanao, Full Stack Developer, and UI/UX Designer.
 
+## Live Demo
+
+🌐 **Portfolio:** https://lloydryan-dev.vercel.app/
+
 ## Scripts
 
 - `npm run dev` starts the local Next development server.
