@@ -44,6 +44,18 @@ export function ProjectCard({ project, linked = true }: ProjectCardProps) {
           {linked ? <FaArrowUpRightFromSquare aria-hidden="true" /> : null}
         </div>
         <p>{project.description}</p>
+        {project.liveUrl ? (
+          <a
+            className="project-live-link"
+            href={project.liveUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Open ${project.title} live site`}
+          >
+            Live site
+            <FaArrowUpRightFromSquare aria-hidden="true" />
+          </a>
+        ) : null}
         <ul aria-label={`${project.title} technologies and project details`}>
           {project.tags.map((tag) => (
             <li key={tag}>{tag}</li>

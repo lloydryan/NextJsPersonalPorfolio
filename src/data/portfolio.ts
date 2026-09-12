@@ -4,6 +4,7 @@ export interface Project {
   image: string;
   description: string;
   tags: string[];
+  liveUrl?: string;
   featured?: boolean;
 }
 
@@ -36,6 +37,26 @@ export const projects: Project[] = [
     description:
       "A web movie searcher and real-time chat application using WebSockets and Node.js.",
     tags: ["Node.js", "WebSockets"],
+    featured: true,
+  },
+  {
+    id: "swap-ta-ga",
+    title: "Swap Ta Ga",
+    image: "/images/project-swap-ta-ga.png",
+    description:
+      "A live web application for item swapping and community exchange.",
+    tags: ["Web app", "Marketplace"],
+    liveUrl: "https://swap-ta-ga.onrender.com/",
+    featured: true,
+  },
+  {
+    id: "bh-management-system",
+    title: "BH Management System",
+    image: "/images/project-boardhaus.png",
+    description:
+      "A live management system built to organize boarding house operations and records.",
+    tags: ["Management system", "Web app"],
+    liveUrl: "https://bh-managementsystem.vercel.app/",
     featured: true,
   },
   {
@@ -136,8 +157,8 @@ export const experience = [
 
 export const portfolioStats = [
   { value: "2021", label: "Started coding" },
-  { value: "6", label: "Portfolio projects" },
-  { value: "5", label: "IT certifications" },
+  { value: "100+", label: "Projects delivered" },
+  { value: "5", label: "Main certs" },
 ];
 
 export const highlightedTech = [

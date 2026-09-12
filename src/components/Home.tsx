@@ -1,4 +1,5 @@
 import AboutExperience from "./portfolio/AboutExperience";
+import Certifications from "./portfolio/Certifications";
 import { Contact, SiteFooter } from "./portfolio/ContactFooter";
 import Hero from "./portfolio/Hero";
 import Projects from "./portfolio/Projects";
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Projects />
       <TechStack />
+      <Certifications />
       <AboutExperience />
       <Contact />
       <SiteFooter />

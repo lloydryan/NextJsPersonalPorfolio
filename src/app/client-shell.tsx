@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import Navbar from "../components/Navbar";
+import PortfolioChatbot from "../components/PortfolioChatbot";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function ClientShell({
   children,
@@ -10,6 +12,8 @@ export default function ClientShell({
     <>
       <Navbar />
       <main>{children}</main>
+      <ScrollToTop />
+      <PortfolioChatbot />
     </>
   );
 }

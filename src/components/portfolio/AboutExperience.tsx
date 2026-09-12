@@ -1,6 +1,4 @@
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
-import { achievements, experience } from "../../data/portfolio";
+import { experience } from "../../data/portfolio";
 
 export default function AboutExperience() {
   return (
@@ -17,10 +15,6 @@ export default function AboutExperience() {
           I work with frontend and backend technologies and bring the same
           interest in clear structure to both development and UI/UX design.
         </p>
-        <Link className="text-link about-credentials-link" href="/achievements">
-          View {achievements.length} certifications
-          <FaArrowRight aria-hidden="true" />
-        </Link>
       </div>
 
       <div className="experience-list" aria-label="Experience timeline">
