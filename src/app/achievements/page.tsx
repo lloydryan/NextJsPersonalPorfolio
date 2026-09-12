@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AchievementArchive from "../../components/portfolio/AchievementArchive";
+import AchievementArchive from "../../components/AchievementArchive";
 
 export const metadata: Metadata = {
   title: "Certifications | Lloyd Ryan Largo",

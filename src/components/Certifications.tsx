@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FaAward } from "react-icons/fa6";
-import { achievements } from "../../data/portfolio";
+import { achievements } from "../data/portfolio";
 
 export default function Certifications() {
   return (

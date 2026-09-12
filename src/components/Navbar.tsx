@@ -10,29 +10,13 @@ import {
   FaLinkedin,
   FaXmark,
 } from "react-icons/fa6";
-import { socialLinks } from "../data/portfolio";
+import { navItems, sectionIds, socialLinks } from "../data/portfolio";
 
-const navItems = [
-  { id: "home", href: "/#home", label: "Home" },
-  { id: "about", href: "/#about", label: "About" },
-  { id: "projects", href: "/#projects", label: "Projects" },
-  { id: "skills", href: "/#skills", label: "Skills" },
-  {
-    id: "certifications",
-    href: "/#certifications",
-    label: "Certificates",
-  },
-  { id: "contact", href: "/#contact", label: "Contact" },
-];
-
-const sectionOrder = [
-  "home",
-  "projects",
-  "skills",
-  "certifications",
-  "about",
-  "contact",
-];
+const getActivePageSection = (pathname: string) => {
+  if (pathname.startsWith("/works")) return "projects";
+  if (pathname.startsWith("/achievements")) return "certifications";
+  return "home";
+};
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -53,17 +37,11 @@ const Navbar = () => {
 
   useEffect(() => {
     if (pathname !== "/") {
-      setActiveSection(
-        pathname.startsWith("/works")
-          ? "projects"
-          : pathname.startsWith("/achievements")
-            ? "certifications"
-            : "home",
-      );
+      setActiveSection(getActivePageSection(pathname));
       return;
     }
 
-    const sections = sectionOrder
+    const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((section): section is HTMLElement => section !== null);
     let animationFrame = 0;

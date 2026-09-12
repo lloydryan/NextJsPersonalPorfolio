@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
-import { projects } from "../../data/portfolio";
+import { projects } from "../data/portfolio";
 import { SiteFooter } from "./ContactFooter";
 import { ProjectCard } from "./Projects";
 

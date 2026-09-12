@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import "../styles/portfolio.css";
+import "./globals.css";
 import ClientShell from "./client-shell";
 
 export const metadata: Metadata = {

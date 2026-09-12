@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ProjectArchive from "../../components/portfolio/ProjectArchive";
+import ProjectArchive from "../../components/ProjectArchive";
 
 export const metadata: Metadata = {
   title: "Projects | Lloyd Ryan Largo",

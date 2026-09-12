@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import {
   ownerProfile,
   portfolioKnowledge,
-  portfolioScope,
   type KnowledgeEntry,
 } from "@/data/portfolioKnowledge";
 
@@ -119,7 +118,6 @@ export async function POST(request: Request) {
     if (!isClearlyAboutLloyd && !hasStrongMatch) {
       return NextResponse.json({
         answer: OUT_OF_SCOPE_REPLY,
-        scope: portfolioScope,
       });
     }
 
@@ -128,7 +126,6 @@ export async function POST(request: Request) {
         message,
         scoredEntries.map((item) => item.entry)
       ),
-      sources: scoredEntries.slice(0, 2).map((item) => item.entry.title),
     });
   } catch {
     return NextResponse.json(

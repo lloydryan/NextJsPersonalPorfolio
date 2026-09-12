@@ -1,4 +1,4 @@
-import { highlightedTech, techStack } from "../../data/portfolio";
+import { highlightedTech, techStack } from "../data/portfolio";
 import SectionHeader from "./SectionHeader";
 
 export default function TechStack() {

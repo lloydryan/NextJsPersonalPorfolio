@@ -1,4 +1,4 @@
-import { experience } from "../../data/portfolio";
+import { experience } from "../data/portfolio";
 
 export default function AboutExperience() {
   return (

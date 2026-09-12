@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
-import { achievements } from "../../data/portfolio";
+import { achievements } from "../data/portfolio";
 import { SiteFooter } from "./ContactFooter";
 
 export default function AchievementArchive() {

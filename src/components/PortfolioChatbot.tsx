@@ -64,10 +64,7 @@ const PortfolioChatbot = () => {
   };
 
   return (
-    <section
-      className={`portfolio-chatbot ${isOpen ? "is-open" : ""}`}
-      aria-label="Portfolio chatbot"
-    >
+    <section className="portfolio-chatbot" aria-label="Portfolio chatbot">
       {isOpen ? (
         <div className="chatbot-panel" role="dialog" aria-label="Ask about Lloyd">
           <div className="chatbot-header">

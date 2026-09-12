@@ -4,7 +4,19 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa6";
-import { socialLinks } from "../../data/portfolio";
+import type { IconType } from "react-icons";
+import {
+  contactLinks,
+  socialLinks,
+  type ContactLinkId,
+} from "../data/portfolio";
+
+const contactIcons: Record<ContactLinkId, IconType> = {
+  email: FaEnvelope,
+  facebook: FaFacebook,
+  github: FaGithub,
+  linkedin: FaLinkedin,
+};
 
 export function Contact() {
   return (
@@ -15,22 +27,21 @@ export function Contact() {
         <p>Let&apos;s build something useful.</p>
       </div>
       <div className="contact-link-grid">
-        <a href={socialLinks.email}>
-          <FaEnvelope aria-hidden="true" />
-          Start a conversation
-        </a>
-        <a href={socialLinks.github} target="_blank" rel="noreferrer">
-          <FaGithub aria-hidden="true" />
-          GitHub
-        </a>
-        <a href={socialLinks.linkedin} target="_blank" rel="noreferrer">
-          <FaLinkedin aria-hidden="true" />
-          LinkedIn
-        </a>
-        <a href={socialLinks.facebook} target="_blank" rel="noreferrer">
-          <FaFacebook aria-hidden="true" />
-          Facebook
-        </a>
+        {contactLinks.map((link) => {
+          const Icon = contactIcons[link.id];
+
+          return (
+            <a
+              href={link.href}
+              key={link.id}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noreferrer" : undefined}
+            >
+              <Icon aria-hidden="true" />
+              {link.label}
+            </a>
+          );
+        })}
       </div>
     </section>
   );

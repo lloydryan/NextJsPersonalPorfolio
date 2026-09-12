@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FaArrowRight, FaLocationDot } from "react-icons/fa6";
-import { portfolioStats } from "../../data/portfolio";
+import { portfolioStats } from "../data/portfolio";
 
 export default function Hero() {
   return (

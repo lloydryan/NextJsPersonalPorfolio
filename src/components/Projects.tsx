@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight, FaArrowUpRightFromSquare } from "react-icons/fa6";
-import { projects, type Project } from "../../data/portfolio";
+import { projects, type Project } from "../data/portfolio";
 import SectionHeader from "./SectionHeader";
 
 interface ProjectCardProps {

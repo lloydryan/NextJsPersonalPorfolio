@@ -20,6 +20,30 @@ export interface Tech {
   src: string;
 }
 
+export type ContactLinkId = "email" | "facebook" | "github" | "linkedin";
+
+export interface ContactLink {
+  id: ContactLinkId;
+  label: string;
+  href: string;
+  external: boolean;
+}
+
+export const navItems = [
+  { id: "home", href: "/#home", label: "Home" },
+  { id: "projects", href: "/#projects", label: "Projects" },
+  { id: "skills", href: "/#skills", label: "Skills" },
+  {
+    id: "certifications",
+    href: "/#certifications",
+    label: "Certificates",
+  },
+  { id: "about", href: "/#about", label: "About" },
+  { id: "contact", href: "/#contact", label: "Contact" },
+];
+
+export const sectionIds = navItems.map((item) => item.id);
+
 export const projects: Project[] = [
   {
     id: "e-commerce-platform",
@@ -182,6 +206,28 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/lloyd-ryan-largo-295683356/",
   facebook: "https://www.facebook.com/lloydryan.largo.7",
 };
+
+export const contactLinks: ContactLink[] = [
+  {
+    id: "email",
+    label: "Start a conversation",
+    href: socialLinks.email,
+    external: false,
+  },
+  { id: "github", label: "GitHub", href: socialLinks.github, external: true },
+  {
+    id: "linkedin",
+    label: "LinkedIn",
+    href: socialLinks.linkedin,
+    external: true,
+  },
+  {
+    id: "facebook",
+    label: "Facebook",
+    href: socialLinks.facebook,
+    external: true,
+  },
+];
 
 export const techStack: Tech[] = [
   {

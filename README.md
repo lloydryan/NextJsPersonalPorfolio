@@ -12,10 +12,8 @@ This is a Next.js portfolio app for Lloyd Ryan Largo, a College Instructor at th
 ## Routes
 
 - `/`
-- `/about`
 - `/works`
 - `/achievements`
-- `/connect`
 
 ## Vercel
 

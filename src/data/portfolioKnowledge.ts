@@ -158,6 +158,3 @@ export const portfolioKnowledge: KnowledgeEntry[] = [
     keywords: ["stats", "numbers", "started", "coding", "count"],
   },
 ];
-
-export const portfolioScope =
-  "Only answer questions about Lloyd Ryan Largo, his portfolio, experience, teaching subjects, projects, skills, certifications, personal details, and contact links.";

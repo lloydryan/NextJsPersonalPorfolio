@@ -1,9 +1,9 @@
-import AboutExperience from "./portfolio/AboutExperience";
-import Certifications from "./portfolio/Certifications";
-import { Contact, SiteFooter } from "./portfolio/ContactFooter";
-import Hero from "./portfolio/Hero";
-import Projects from "./portfolio/Projects";
-import TechStack from "./portfolio/TechStack";
+import AboutExperience from "./AboutExperience";
+import Certifications from "./Certifications";
+import { Contact, SiteFooter } from "./ContactFooter";
+import Hero from "./Hero";
+import Projects from "./Projects";
+import TechStack from "./TechStack";
 
 export default function Home() {
   return (
