@@ -12,6 +12,14 @@ html {
   --portfolio-dark: #0a0a0a;
   --portfolio-focus: rgba(10, 10, 10, 0.22);
   --portfolio-container: 1280px;
+  --site-header-height: 57px;
+  --home-viewport-height: 100vh;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --home-viewport-height: 100dvh;
+  }
 }
 
 body {
@@ -211,6 +219,10 @@ button:focus-visible {
 }
 
 .hero-section-shell {
+  min-height: calc(var(--home-viewport-height) - var(--site-header-height));
+  box-sizing: border-box;
+  display: grid;
+  align-items: center;
   padding: 44px 0 36px;
 }
 
@@ -1194,6 +1206,10 @@ button:focus-visible {
 }
 
 @media (max-width: 900px) {
+  :root {
+    --site-header-height: 69px;
+  }
+
   html {
     scroll-padding-top: 80px;
   }
@@ -1261,6 +1277,7 @@ button:focus-visible {
   }
 
   .hero-section-shell {
+    min-height: calc(var(--home-viewport-height) - var(--site-header-height));
     padding: 40px 0 48px;
   }
 
