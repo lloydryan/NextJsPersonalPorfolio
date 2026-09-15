@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { FaArrowRight, FaLocationDot } from "react-icons/fa6";
 import { portfolioStats } from "../data/portfolio";
+import CursorAwarePortrait from "./CursorAwarePortrait";
 
 export default function Hero() {
   return (
@@ -37,15 +37,7 @@ export default function Hero() {
         </div>
 
         <aside className="hero-portrait" aria-label="Profile information">
-          <div className="portrait-frame">
-            <Image
-              src="/images/profile.jpg"
-              alt="Portrait of Lloyd Ryan Largo"
-              fill
-              priority
-              sizes="(max-width: 900px) 100vw, 36vw"
-            />
-          </div>
+          <CursorAwarePortrait />
           <p className="editorial-note">Good ideas build better tomorrows.</p>
           <div className="location-card">
             <FaLocationDot aria-hidden="true" />
