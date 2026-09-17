@@ -20,6 +20,14 @@ export interface Tech {
   src: string;
 }
 
+export interface ExperienceItem {
+  period: string;
+  title: string;
+  organization: string;
+  description: string;
+  images: [string, string, string];
+}
+
 export type ContactLinkId = "email" | "facebook" | "github" | "linkedin";
 
 export interface ContactLink {
@@ -149,13 +157,18 @@ export const achievements: Achievement[] = [
   },
 ];
 
-export const experience = [
+export const experience: ExperienceItem[] = [
   {
     period: "Present",
     title: "College Instructor",
     organization: "University of Mindanao",
     description:
       "Currently serving as a College Instructor at the University of Mindanao.",
+    images: [
+      "/images/profile.jpg",
+      "/images/project-boardhaus.png",
+      "/images/project1.png",
+    ],
   },
   {
     period: "August 2025",
@@ -163,6 +176,11 @@ export const experience = [
     organization: "University of Mindanao",
     description:
       "Completed my degree and strengthened my foundation in computer science and software development.",
+    images: [
+      "/images/project1.png",
+      "/images/project-swap-ta-ga.png",
+      "/images/project2.png",
+    ],
   },
   {
     period: "2022-2024",
@@ -170,6 +188,11 @@ export const experience = [
     organization: "Independent work",
     description:
       "Built projects and gained real-world experience in web development and software solutions.",
+    images: [
+      "/images/project-boardhaus.png",
+      "/images/project3.png",
+      "/images/project4.png",
+    ],
   },
   {
     period: "2021",
@@ -177,6 +200,11 @@ export const experience = [
     organization: "University of Mindanao",
     description:
       "Began learning programming after enrolling at the University of Mindanao.",
+    images: [
+      "/images/project2.png",
+      "/images/project5.png",
+      "/images/project6.png",
+    ],
   },
 ];
 
