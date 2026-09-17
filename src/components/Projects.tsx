@@ -34,14 +34,22 @@ export function ProjectCard({ project, linked = true }: ProjectCardProps) {
       )}
       <div className="project-copy">
         <div className="project-title-row">
-          <h3>
+          <div className="project-title-group">
+            <h3>
+              {linked ? (
+                <Link href={`/works#${project.id}`}>{project.title}</Link>
+              ) : (
+                project.title
+              )}
+            </h3>
+            <span className="project-title-tag">{project.tags[0]}</span>
             {linked ? (
-              <Link href={`/works#${project.id}`}>{project.title}</Link>
-            ) : (
-              project.title
-            )}
-          </h3>
-          {linked ? <FaArrowUpRightFromSquare aria-hidden="true" /> : null}
+              <FaArrowUpRightFromSquare
+                className="project-title-icon"
+                aria-hidden="true"
+              />
+            ) : null}
+          </div>
         </div>
         <p>{project.description}</p>
         {project.liveUrl ? (

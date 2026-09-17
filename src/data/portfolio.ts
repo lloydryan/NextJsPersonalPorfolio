@@ -91,11 +91,12 @@ export const projects: Project[] = [
     tags: ["CMS", "Rich text editing"],
   },
   {
-    id: "portfolio-website",
-    title: "Project 4",
+    id: "kiosk-mode-web-app-launcher",
+    title: "Kiosk Mode Web App Launcher",
     image: "/images/project4.png",
-    description: "A portfolio website built using React and Bootstrap.",
-    tags: ["React", "Bootstrap"],
+    description:
+      "A kiosk mode application that launches a web app link in forced full-screen mode, making the web app feel like a native desktop application.",
+    tags: ["Kiosk mode", "Web app launcher"],
   },
   {
     id: "company-web-design",
