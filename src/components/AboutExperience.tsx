@@ -6,7 +6,7 @@ import { experience } from "../data/portfolio";
 
 const cardPositions = ["left", "center", "right"] as const;
 const cardCenters = [0.2, 0.5, 0.8];
-const cardBaseX = [-35, 0, 35];
+const cardBaseX = [-56, 0, 56];
 const cardBaseY = [18, -8, 18];
 const cardBaseRotate = [-8, 0, 8];
 const aboutCollage = "/images/about-collage.png";
@@ -36,8 +36,8 @@ const getCardLayout = (cardIndex: number, cardCount: number) => {
 
   if (cardCount === 2) {
     const twoCardLayout = [
-      { position: "left", center: 0.34, baseX: -24, baseY: 10, baseRotate: -6 },
-      { position: "right", center: 0.66, baseX: 24, baseY: 10, baseRotate: 6 },
+      { position: "left", center: 0.34, baseX: -38, baseY: 10, baseRotate: -6 },
+      { position: "right", center: 0.66, baseX: 38, baseY: 10, baseRotate: 6 },
     ] as const;
 
     return { ...twoCardLayout[cardIndex], baseZ: 1 };
@@ -247,7 +247,8 @@ export default function AboutExperience() {
                           src={image}
                           alt=""
                           fill
-                          sizes="(max-width: 900px) 42vw, 18vw"
+                          quality={100}
+                          sizes="(max-width: 560px) 70vw, (max-width: 900px) 260px, 280px"
                         />
                       </div>
                     );
