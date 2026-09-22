@@ -2,6 +2,7 @@ export interface Project {
   id: string;
   title: string;
   image: string;
+  imageFit?: "cover" | "contain";
   description: string;
   tags: string[];
   liveUrl?: string;
@@ -101,7 +102,8 @@ export const projects: Project[] = [
   {
     id: "kiosk-mode-web-app-launcher",
     title: "Kiosk Mode Web App Launcher",
-    image: "/images/project4.png",
+    image: "/images/project-kiosk-mode.jpg",
+    imageFit: "contain",
     description:
       "A kiosk mode application that launches a web app link in forced full-screen mode, making the web app feel like a native desktop application.",
     tags: ["Kiosk mode", "Web app launcher"],
@@ -165,7 +167,7 @@ export const experience: ExperienceItem[] = [
     description:
       "Currently serving as a College Instructor at the University of Mindanao.",
     images: [
-      "/images/profile.jpg",
+      "/images/experience-college-instructor.jpg",
       "/images/project-boardhaus.png",
       "/images/project1.png",
     ],

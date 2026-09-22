@@ -527,6 +527,11 @@ button:focus-visible {
   transition: transform 220ms ease;
 }
 
+.project-media-contain img {
+  object-fit: contain;
+  padding: 10px;
+}
+
 .project-card:hover .project-media img {
   transform: scale(1.02);
 }

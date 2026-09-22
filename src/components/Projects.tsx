@@ -10,6 +10,9 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, linked = true }: ProjectCardProps) {
+  const mediaClassName = `project-media ${
+    project.imageFit === "contain" ? "project-media-contain" : ""
+  }`;
   const projectImage = (
     <Image
       src={project.image}
@@ -23,14 +26,14 @@ export function ProjectCard({ project, linked = true }: ProjectCardProps) {
     <article className="project-card" id={project.id}>
       {linked ? (
         <Link
-          className="project-media"
+          className={mediaClassName}
           href={`/works#${project.id}`}
           aria-label={`View ${project.title} in the project archive`}
         >
           {projectImage}
         </Link>
       ) : (
-        <div className="project-media">{projectImage}</div>
+        <div className={mediaClassName}>{projectImage}</div>
       )}
       <div className="project-copy">
         <div className="project-title-row">
