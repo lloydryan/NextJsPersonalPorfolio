@@ -984,7 +984,7 @@ button:focus-visible {
   position: relative;
   z-index: 3;
   width: 100%;
-  min-height: min(52vh, 430px);
+  min-height: min(68vh, 580px);
   align-self: center;
   perspective: 1200px;
   overflow: visible;
@@ -1013,7 +1013,7 @@ button:focus-visible {
 
 .about-image-card {
   position: absolute;
-  width: clamp(148px, 31%, 184px);
+  width: clamp(300px, 64%, 370px);
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border: 1px solid rgba(8, 8, 8, 0.12);
@@ -1665,7 +1665,7 @@ button:focus-visible {
 
   .about-visual-stack {
     grid-column: 1;
-    min-height: 300px;
+    min-height: min(74vw, 500px);
     order: 3;
   }
 
@@ -1802,7 +1802,11 @@ button:focus-visible {
   }
 
   .about-visual-stack {
-    min-height: 240px;
+    min-height: min(94vw, 430px);
+  }
+
+  .about-image-card {
+    width: min(74vw, 310px);
   }
 
   .archive-intro h1 {

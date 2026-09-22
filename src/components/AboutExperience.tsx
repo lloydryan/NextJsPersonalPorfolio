@@ -6,7 +6,7 @@ import { experience } from "../data/portfolio";
 
 const cardPositions = ["left", "center", "right"] as const;
 const cardCenters = [0.2, 0.5, 0.8];
-const cardBaseX = [-88, 0, 88];
+const cardBaseX = [-35, 0, 35];
 const cardBaseY = [18, -8, 18];
 const cardBaseRotate = [-8, 0, 8];
 const aboutCollage = "/images/about-collage.png";
@@ -20,6 +20,37 @@ const mix = (from: number, to: number, progress: number) =>
 const smooth = (value: number) => {
   const progress = clamp(value);
   return progress * progress * (3 - 2 * progress);
+};
+
+const getCardLayout = (cardIndex: number, cardCount: number) => {
+  if (cardCount === 1) {
+    return {
+      position: "center",
+      center: 0.5,
+      baseX: 0,
+      baseY: -8,
+      baseRotate: 0,
+      baseZ: 2,
+    };
+  }
+
+  if (cardCount === 2) {
+    const twoCardLayout = [
+      { position: "left", center: 0.34, baseX: -24, baseY: 10, baseRotate: -6 },
+      { position: "right", center: 0.66, baseX: 24, baseY: 10, baseRotate: 6 },
+    ] as const;
+
+    return { ...twoCardLayout[cardIndex], baseZ: 1 };
+  }
+
+  return {
+    position: cardPositions[cardIndex],
+    center: cardCenters[cardIndex],
+    baseX: cardBaseX[cardIndex],
+    baseY: cardBaseY[cardIndex],
+    baseRotate: cardBaseRotate[cardIndex],
+    baseZ: cardIndex === 1 ? 2 : 1,
+  };
 };
 
 export default function AboutExperience() {
@@ -187,30 +218,28 @@ export default function AboutExperience() {
               >
                 <div className="about-card-fan">
                   {item.images.map((image, cardIndex) => {
+                    const layout = getCardLayout(cardIndex, item.images.length);
                     const peak =
                       highlightReady *
                       smooth(
                         1 -
-                          Math.abs(cardProgress - cardCenters[cardIndex]) /
-                            0.18,
+                          Math.abs(cardProgress - layout.center) / 0.18,
                       );
 
                     return (
                       <div
-                        className={`about-image-card about-image-card-${cardPositions[cardIndex]}`}
+                        className={`about-image-card about-image-card-${layout.position}`}
                         key={`${item.period}-${image}-${cardIndex}`}
                         style={
                           {
-                            "--card-x": `${cardBaseX[cardIndex] + mix(0, -cardBaseX[cardIndex] * 0.06, peak)}%`,
-                            "--card-y": `${cardBaseY[cardIndex] + mix(0, -20, peak)}px`,
-                            "--card-rotate": `${mix(cardBaseRotate[cardIndex], cardBaseRotate[cardIndex] * 0.5, peak)}deg`,
+                            "--card-x": `${layout.baseX + mix(0, -layout.baseX * 0.06, peak)}%`,
+                            "--card-y": `${layout.baseY + mix(0, -20, peak)}px`,
+                            "--card-rotate": `${mix(layout.baseRotate, layout.baseRotate * 0.5, peak)}deg`,
                             "--card-scale": mix(1, 1.08, peak),
                             "--card-opacity": 1,
                             "--card-brightness": mix(1, 1.06, peak),
                             "--card-depth": `${mix(0, 64, peak)}px`,
-                            "--card-z": Math.round(
-                              (cardIndex === 1 ? 2 : 1) + peak * 20,
-                            ),
+                            "--card-z": Math.round(layout.baseZ + peak * 20),
                           } as CSSProperties
                         }
                       >

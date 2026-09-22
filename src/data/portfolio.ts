@@ -26,7 +26,7 @@ export interface ExperienceItem {
   title: string;
   organization: string;
   description: string;
-  images: [string, string, string];
+  images: string[];
 }
 
 export type ContactLinkId = "email" | "facebook" | "github" | "linkedin";
@@ -167,9 +167,9 @@ export const experience: ExperienceItem[] = [
     description:
       "Currently serving as a College Instructor at the University of Mindanao.",
     images: [
+      "/images/experience-instructor-event.png",
       "/images/experience-college-instructor.jpg",
-      "/images/project-boardhaus.png",
-      "/images/project1.png",
+      "/images/experience-instructor-faculty.png",
     ],
   },
   {
@@ -179,9 +179,9 @@ export const experience: ExperienceItem[] = [
     description:
       "Completed my degree and strengthened my foundation in computer science and software development.",
     images: [
-      "/images/project1.png",
-      "/images/project-swap-ta-ga.png",
-      "/images/project2.png",
+      "/images/experience-graduated-portrait.png",
+      "/images/experience-graduated-campus.png",
+      "/images/experience-graduated-ceremony.png",
     ],
   },
   {
@@ -191,9 +191,9 @@ export const experience: ExperienceItem[] = [
     description:
       "Built projects and gained real-world experience in web development and software solutions.",
     images: [
-      "/images/project-boardhaus.png",
-      "/images/project3.png",
-      "/images/project4.png",
+      "/images/experience-freelance-web.png",
+      "/images/experience-freelance-dashboard.png",
+      "/images/experience-freelance-delivery.png",
     ],
   },
   {
@@ -203,9 +203,9 @@ export const experience: ExperienceItem[] = [
     description:
       "Began learning programming after enrolling at the University of Mindanao.",
     images: [
-      "/images/project2.png",
-      "/images/project5.png",
-      "/images/project6.png",
+      "/images/experience-started-java-code.png",
+      "/images/experience-started-java.png",
+      "/images/experience-started-sql.png",
     ],
   },
 ];
