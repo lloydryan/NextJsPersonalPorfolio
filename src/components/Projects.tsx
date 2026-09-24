@@ -23,7 +23,10 @@ export function ProjectCard({ project, linked = true }: ProjectCardProps) {
   );
 
   return (
-    <article className="project-card" id={project.id}>
+    <article
+      className="project-card !h-auto !grid-cols-1 min-[561px]:!h-[168px] min-[561px]:!grid-cols-[42%_minmax(0,1fr)]"
+      id={project.id}
+    >
       {linked ? (
         <Link
           className={mediaClassName}
@@ -93,7 +96,7 @@ export default function Projects() {
           </Link>
         }
       />
-      <div className="project-grid">
+      <div className="project-grid !grid-cols-1 min-[901px]:!grid-cols-3">
         {featuredProjects.map((project) => (
           <ProjectCard project={project} key={project.id} />
         ))}

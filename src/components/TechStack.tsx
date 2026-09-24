@@ -13,7 +13,7 @@ export default function TechStack() {
         title="Tools I Use"
         description="Technologies I use to build modern, scalable, and user-friendly applications."
       />
-      <div className="tech-grid-clean">
+      <div className="tech-grid-clean !grid !grid-cols-2 min-[561px]:!flex">
         {displayedTech.map((tech) => (
           <div className="tech-item" key={tech.name}>
             <img src={tech.src} alt="" aria-hidden="true" loading="lazy" />

@@ -7,7 +7,7 @@ import TechStack from "./TechStack";
 
 export default function Home() {
   return (
-    <div className="portfolio-site">
+    <div className="portfolio-site !w-[min(calc(100%_-_1.5rem),var(--portfolio-container))] min-[561px]:!w-[min(calc(100%_-_2rem),var(--portfolio-container))] min-[1181px]:!w-[min(calc(100%_-_2.5rem),var(--portfolio-container))]">
       <Hero />
       <Projects />
       <TechStack />

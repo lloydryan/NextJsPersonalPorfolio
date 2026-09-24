@@ -88,7 +88,10 @@ const Navbar = () => {
 
   return (
     <header className="site-header">
-      <nav className="site-nav" aria-label="Primary navigation">
+      <nav
+        className="site-nav !w-[min(calc(100%_-_1.5rem),var(--portfolio-container))] min-[561px]:!w-[min(calc(100%_-_2rem),var(--portfolio-container))] min-[1181px]:!w-[min(calc(100%_-_2.5rem),var(--portfolio-container))]"
+        aria-label="Primary navigation"
+      >
         <Link className="brand-lockup" href="/#home" onClick={closeMenu}>
           <span className="brand-mark" aria-hidden="true">
             LR
@@ -113,9 +116,11 @@ const Navbar = () => {
 
         <div
           id="primary-navigation"
-          className={`nav-panel ${isOpen ? "is-open" : ""}`}
+          className={`nav-panel max-[900px]:!grid-cols-1 min-[901px]:!grid min-[901px]:!grid-cols-[1fr_auto] ${
+            isOpen ? "is-open" : ""
+          }`}
         >
-          <div className="nav-links">
+          <div className="nav-links max-[900px]:!grid max-[900px]:!gap-0 min-[901px]:!flex">
             {navItems.map((item) => (
               <Link
                 key={item.id}
@@ -134,7 +139,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="nav-actions">
+          <div className="nav-actions max-[900px]:!mt-3 min-[901px]:!mt-0">
             <span className="current-role">
               <span aria-hidden="true" />
               College Instructor at UM

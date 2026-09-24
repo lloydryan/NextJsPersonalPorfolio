@@ -20,13 +20,16 @@ const contactIcons: Record<ContactLinkId, IconType> = {
 
 export function Contact() {
   return (
-    <section id="contact" className="content-section contact-section-clean">
+    <section
+      id="contact"
+      className="content-section contact-section-clean !grid-cols-1 min-[901px]:!grid-cols-[1fr_auto]"
+    >
       <div>
         <p className="section-kicker">Contact</p>
         <h2>Have a project in mind?</h2>
         <p>Let&apos;s build something useful.</p>
       </div>
-      <div className="contact-link-grid">
+      <div className="contact-link-grid !grid-cols-1 min-[561px]:!grid-cols-2">
         {contactLinks.map((link) => {
           const Icon = contactIcons[link.id];
 
@@ -49,7 +52,7 @@ export function Contact() {
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer !grid-cols-1 min-[901px]:!grid-cols-[1fr_auto_auto_auto]">
       <div>
         <strong>Lloyd Ryan Largo</strong>
         <span>College Instructor / Full Stack Developer</span>

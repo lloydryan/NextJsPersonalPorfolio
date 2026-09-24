@@ -5,7 +5,7 @@ import { achievements } from "../data/portfolio";
 export default function Certifications() {
   return (
     <section id="certifications" className="content-section certifications-section">
-      <header className="certifications-heading">
+      <header className="certifications-heading !grid-cols-1 !gap-5 min-[901px]:!grid-cols-[minmax(0,1fr)_minmax(280px,0.55fr)] min-[901px]:!gap-12">
         <div>
           <p className="section-kicker">Certifications</p>
           <h2>Certificates &amp; Achievements</h2>
@@ -24,7 +24,7 @@ export default function Certifications() {
         </div>
       </header>
 
-      <div className="certifications-grid">
+      <div className="certifications-grid !grid-cols-1 min-[561px]:!grid-cols-2 min-[901px]:!grid-cols-5">
         {achievements.map((achievement) => (
           <article className="certificate-card" key={achievement.title}>
             <div className="certificate-image">

@@ -110,7 +110,7 @@ export default function AboutExperience() {
       className="content-section about-section about-story"
       ref={sectionRef}
     >
-      <div className="about-story-sticky">
+      <div className="about-story-sticky max-[900px]:!grid-cols-1 min-[901px]:!grid-cols-[minmax(420px,1fr)_minmax(360px,1fr)] min-[1181px]:!grid-cols-[minmax(500px,1fr)_minmax(440px,1fr)]">
         <div
           className="about-copy"
           style={
